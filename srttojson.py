@@ -45,7 +45,7 @@ if len(argv) == 3:
     srt = open(srt_filename, 'r', encoding="utf-8").read()
     parsed_srt = parse_srt(srt)
     open(out_filename, 'w', encoding="utf-8").write(
-        json.dumps(parsed_srt, indent=2, sort_keys=True))
+        json.dumps(parsed_srt, indent=2, sort_keys=True, ensure_ascii=False))
 elif len(argv) == 1:
     print('Type \'srttojson.py filename.srt filename.json\'')
 else:
